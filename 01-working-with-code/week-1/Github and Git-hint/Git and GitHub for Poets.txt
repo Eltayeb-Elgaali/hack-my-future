@@ -1,0 +1,339 @@
+A. git & github for poets
+
+1- Git is actual version control software while Github is web service"Social Network"
+2- + New repository with README => New file => Commit new file => Edit "pencil icon"
+   write notes then "Commit changes" to master or new branch =>History show changes in one file "see line highlighted"
+above you will see "Commit hash"
+3- Master branch => create new branch if you are not sure u will keep it good idea
+4- if u decide to keep it send "compare & Pull Request" => merge => confirm merg
+5- Fork from one account to another  edit propose Fork
+6- ask someone to "Pull Request" your =>changes merge pull request => confirm
+7- Issues :to leave comment about a project New issue  Styling with Markdown is supported
+8- issues have Id's =>edit file and put issue id in "comment changes" then it will appear in issue
+9- fixes keyword close automatically the issue
+10- paste "Commit hash" in an Issue in write area it give URL lead to that commit
+
+Gitbash
+drag and drop file to get path - Tab
+
+after installation type git
+VIM cmnd line txt editor shift+: q to quiet
+-----------
+>cd - pwd - ls - open . - ls-all - 
+>git clone URL.git        now it is in ur local machine so cd to that dir
+>git status
+-- edit the file locally will not be saved automatically use commit
+>git commit -a -m "adding x y z"     u have to be logged on
+>git config --global user.name "Eltayeb-Elgaali" 
+>git config --global user.email gaaliii@yahoo.com
+>git config --list
+>git log -2
+
+>git remote -v
+ git push remote branche
+>git push origin master : username password
+
+--
+>git status u get error msg "not a git repository" 
+>git init        now again
+>git status
+
+--make second file manually in dir
+>git status
+>git add file1.txt          >git rm --cashed file1.txt   staging area   >git add.
+>git status
+
+------
+if u create repository locally then will not be remote >go to Github and create new Repo without README tips
+
+>git remote add origin URL     from Github website
+>git remote    :u get origin
+>git remote -v
+>git push origin master     make some changes in ur Repo in Github website
+>git pull origin master
+-------------------------------------------------------------------------------------------------
+B. Learning git branching
+Introduction Sequence
+1- git commit -m "add new category"
+2- git checkout -b [yourbranchname]
+
+--------
+$git checkout -b bugFix
+$git commit -m "Hello"
+$git checkout master
+$git commit -m "Goedbuy"
+$git merg bugFix
+
+-------
+$git rebase master   and * on bugFix
+
+---------
+HEAD
+$git checkout c4   
+
+
+chout bugFIx -comm  -bk to maste en comm
+ckout bugFIx en rebase in mster
+-------------------------------------------
+
+Push & Pull -- Git Remotes!
+-----------------
+>git commit -m "hi"
+>git checkout o/master
+>git commit -m "bye"
+-------------------
+>git clone
+>git fakeTeamwork master
+>git commit
+>git pull
+
+----------------------
+history
+>git fetch; git rebase o/master; git push
+>git fetch; git merge o/master; git push
+>git pull --rebase; git push
+>git pull; git push 
+
+------------------------------------
+Remote Rejected!
+! [remote rejected] master -> master (TF402455: Pushes to this branch are not permitted; you must use a pull request to update this branch.)
+
+----------
+Create another branch called feature and push that to the remote. Also reset your master back to be in sync with the remote otherwise you may have issues next time you do a pull and someone else's commit conflicts with yours.
+
+https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/homework_pr.md
+Question : how to block people from editing HYF master branch
+Question : ssh change what in Git
+Question : tree/master 
+Question : fatal: The current branch red_links has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin red_links
+Question: side3 is not a remote tracking branch! I don't know where to push :get this when try git pull
+question: It then creates a local branch that tracks the currently active branch on the remote, which is master in most cases.
+
+Question: hint next phases : is to revert what i have done
+Question: hint to know what u have to do immediatly not after exer
+question from where come bg 5-css-selectors in html-css-git exerceis
+
+question : parent in commits 
+question live server not working only command line
+Question: hint follow carfully instructions in exercise Do not modify the index.html file._
+Question: Once git clone is complete, you only have one local branch (so you aren't overwhelmed) but you can see all the different branches on the remote (if you happen to be very curious). It's the best of both worlds!
+--------------------------------------------------------------------------------------------------------
+Git command from amesterdam
+1- Go to desiered dir
+2- git clone url.your-name.git   .not HYF main repo
+3- make your changes
+4- git status
+5- git diff
+6- git add -A  / git add . / git 
+7- git status
+8- git push 
+9- git branch -a this to see branches
+got to ur repo in Github websit last u pdate 
+from head to base
+--------------------------------------------------
+How to setup a new git repo
+1- Go to desiered dir ex week1
+2- git init
+3- ls -a  //u will see .git hidden file. now git track this folder
+4- ls .git
+5- npm init  (your changes)
+6- ls -la // u see ur new created stuff
+7- git status
+8- git add -A
+9- git commit -am "ur description"// instead of a one file cane be mentioned
+10- git push //will fail no remote
+11- go to Github website and create new repo and copy url
+12- git remote add origin url
+13- git push -u origin master  // for the first time 
+----------------------------------------------------------------------------------------------
+
+
+
+
+git checkout C3
+git checkout HEAD^ 
+git checkout HEAD^
+C
+-------------------
+git checkout HEAD~4
+git branch -f master HEAD~3
+-------------------------
+git branch -f bugFix HEAD~3
+git branch -f master c6
+----------------------------
+git reset HEAD~1
+git revert HEAD
+--------------------
+git cherry-pick c2 c4
+---------------
+git rebase -i HEAD~4
+------------------------
+
+git commit --amend
+git rebase -i
+
+-------------
+git tag v1 c1
+-----------------
+git describe master
+--------------------
+git checkout master
+git cherry-pick c2
+git commit --amend
+git cherry-pick
+------------------------
+reset --forSolution
+
+$ git rebase master bugFix
+
+$ git rebase bugFix side
+
+$ git rebase side another
+
+$ git rebase another master
+--------------------------
+
+git checkout one
+
+$ git cherry-pick C4 C3 C2
+
+$ git checkout two
+
+$ git cherry-pick C5 C4 C3 C2
+
+$ git branch -f three C2
+-------------------------------
+git checkout -b feature C2
+
+$ git push origin feature
+-----------------------------------------------------------------
+git fetch
+
+$ git rebase o/master side1
+
+$ git rebase side1 side2
+
+$ git rebase side2 side3
+
+$ git rebase side3 master
+git push
+------------------------------
+
+$ git checkout master
+
+$ git pull
+
+$ git merge side1
+
+$ git merge side2
+
+$ git merge side3
+
+$ git push
+----------------------------------------------
+two ways to set remote tracking
+1- git checkout -b totallyNotMaster o/master
+
+2- git branch -u o/master foo   if foo is checkout    only use :git branch -u o/master
+
+-----------
+git checkout -b side o/master
+
+local branch "side" set to track remote branch "o/master"
+
+$ git commit
+
+$ git pull --rebase   // sync local with remote
+
+-----------------------------------------
+git push <remote> <place>
+
+
+git push origin master :
+
+Go to the branch named "master" in my repository, grab all the commits, and then go to the branch "master" on the remote named "origin". Place whatever commits are missing on that branch and then tell me when you're done.
+------
+By specifying master as the "place" argument, we told git where the commits will come from and where the commits will go. It's essentially the "place" or "location" to synchronize between the two repositories.
+
+Keep in mind that since we told git everything it needs to know (by specifying both arguments), it totally ignores where we are checked out!
+------------------------------------------------------------------------
+git checkout c0 ;git push origin master
+git checkout c0 ; git push 
+--The command fails (as you can see), since HEAD is not checked out on a remote-tracking branch.
+
+------
+git push origin <source>:<destination>
+--------
+----------------------
+ 
+git push origin master^:foo
+
+$ git push origin foo:master
+------
+git fetch origin foo:master
+-------------------------
+git fetch origin master~1:foo
+
+$ git fetch origin foo:master
+
+$ git checkout foo
+
+$ git merge master
+
+------------------------------------
+DELETE
+What does pushing "nothing" to a remote branch do? It deletes it!
+git push origin : foo
+-----------------------
+CREATE
+Finally, fetching "nothing" to a place locally actually makes a new branch.
+git fetch origin : bar
+------------------------------------------------------------------------------------------------------------
+ $git pull origin foo            ==  $git fetch origin foo; git merge o/foo
+ $git pull origin bar~1:bugFix   ==  git fetch origin bar~1:bugFix; git merge bugFix
+
+git pull origin bar:foo
+
+$ git pull origin master:side
+--------------------------------------------------------------------------------------------------------------
+Git & GitHub Tutorial for Beginners #8 and #9
+--------
+git log --oneline     //show you the commits
+git status
+make changes 
+git add .
+git commit -m "added ..."
+-----
+git branch feature-1  // create new branch
+git branch -a      //  u will see * on master
+git checkout feature-1
+
+now amend one file
+---
+git status   // see * by feature-1
+git add .
+git commit -m "add new feature"
+
+delete branch
+----
+git branch -D feature-1   // it is possible before we merge
+
+create and checkout a branch on same time
+----
+git checkout -b feature-a
+
+Merge
+-------
+git merge fearure-a       * will be at master
+-------------------------------------------------------------------------------------------------------------
+git diff layout.scss
+
+
+
+--------------
+git commit -m "Turn links in the messages to Green"
+5-css-selectors
+<time class="message__time">Yesterday, 7:25pm</time>
